@@ -1,23 +1,23 @@
 <div class="card">
     <div class="row">
         <div class="col-md-5 wrapthumbnail">
-            <a href="{% url 'post_detail' post.id %}">
+            <a href="#">
                 <div class="thumbnail" style="background-image:url({{ post.image }});">
                 </div>
             </a>
         </div>
         <div class="col-md-7">
             <div class="card-block">
-                <h2 class="card-title"><a href="{% url 'post_detail' post.id %}">{{  post.title }}</a></h2>
-                <h4 class="card-text">{{ post.excerpt }}</h4>
+                <h2 class="card-title"><a href="#">{{  post.name }}</a></h2>
+                <h4 class="card-text">{{ post.name }}</h4>
                 <div class="metafooter">
                     <div class="wrapfooter">
                         <span class="meta-footer-thumb">
-                        <a href="{% url 'author_detail' post.posted_by_id %}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        <a href="#"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
                         </span>
                         <span class="author-meta">
-                        <span class="post-name"><a href="{% url 'author_detail' post.posted_by_id %}">Steve</a></span><br/>
-                        <span class="post-date">{{ post.post_date }}</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        <span class="post-name"><a href="#">{{  post.author }}</a></span><br/>
+                        <span class="post-date">{{ post.created_at }}</span><span class="dot"></span><span class="post-read">6 min read</span>
                         </span>
                         <span class="post-read-more">
                             <a href="post.html" title="Read Story">

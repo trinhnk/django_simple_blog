@@ -15,6 +15,8 @@ class BlogCategory(models.Model):
     name = models.CharField(max_length=45)
     slug = models.SlugField(max_length=45)
     description = models.CharField(max_length=500)
+    def __str__(self):
+        return self.name
 
 class BlogPost(models.Model):
     name = models.CharField(max_length=255)
@@ -26,6 +28,8 @@ class BlogPost(models.Model):
     updated_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(BlogCategory, on_delete=models.SET_NULL, null=True)
     author = models.ForeignKey(BlogAuthor, on_delete=models.SET_NULL, null=True)
+    def __str__(self):
+        return self.name
 
 class BlogComment(models.Model):
     content = models.CharField(max_length=500)
