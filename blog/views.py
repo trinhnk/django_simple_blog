@@ -8,10 +8,12 @@ def index(request):
     posts = BlogPost.objects.all()
     return render(request, 'blog/page/home.html', {'posts': posts})
 
+def login(request):
+    return render(request, 'blog/auth/login.html')
+
+def register(request):
+    return render(request, 'blog/auth/register.html')
+
 def blogPost(request, post_id):
-    if not post_id:
-        latestId = BlogPost.objects.latest('id').id
-        post = BlogPost.objects.get(id=randrange(1,4))
-    else:
-        post = BlogPost.objects.get(id=post_id)
+    post = BlogPost.objects.get(id=post_id)
     return render(request, 'blog/page/post.html', {'post': post})
