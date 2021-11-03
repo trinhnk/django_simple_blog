@@ -23,7 +23,7 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=255)
     description = models.CharField(max_length=500)
     content = models.TextField(max_length=5000, null=True)
-    image = models.ImageField(upload_to='blog/static/blog/img/post', null=True)
+    image = models.ImageField(upload_to='images/posts/', null=True)
     published_at = models.DateTimeField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
