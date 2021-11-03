@@ -11,11 +11,16 @@
     <body>
         <div class="login-page">
             <div class="form">
-                <form class="register-form">
-                    <input type="text" placeholder="Tên đăng nhập"/>
+                <form class="register-form" method="POST">
+                    {% csrf_token %}
+                    {{ register_form.email }}
+                    {{ register_form.username }}
+                    {{ register_form.password1 }}
+                    {{ register_form.password2 }}
+                    {% comment %} <input type="text" placeholder="Tên đăng nhập"/>
                     <input type="password" placeholder="Mật khẩu"/>
-                    <input type="text" placeholder="Địa chỉ Email"/>
-                    <button>Đăng ký</button>
+                    <input type="text" placeholder="Địa chỉ Email"/> {% endcomment %}
+                    <button type="submit">Đăng ký</button>
                     <p class="message">Đã đăng ký? <a href="{% url 'login' %}">Đăng nhập</a></p>
                 </form>
             </div>

@@ -17,4 +17,4 @@ class UserLoginForm(AuthenticationForm):
             'class': 'form-control',
             'placeholder': 'Mật khẩu',
         }
-))
+    ))

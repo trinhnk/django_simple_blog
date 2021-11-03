@@ -20,5 +20,7 @@ urlpatterns = [
             authentication_form=UserLoginForm
             ),
         name='login'
-    )
+    ),
+
+    path('register/', views.register_request, name="register"),
 ]
