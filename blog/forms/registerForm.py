@@ -41,6 +41,7 @@ class UserRegisterForm(UserCreationForm):
 	def save(self, commit=True):
 		user = super(UserRegisterForm, self).save(commit=False)
 		user.email = self.cleaned_data['email']
+		user.is_staff = True
 
 		if commit:
 			user.save()
